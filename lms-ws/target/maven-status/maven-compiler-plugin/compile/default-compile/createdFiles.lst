@@ -1,0 +1,6 @@
+com\vl\lms\dao\DAO.class
+com\vl\lms\dao\DAOImpl.class
+com\vl\lms\exceptions\LMSException.class
+com\vl\lms\service\LMSService.class
+com\vl\lms\service\LMSServiceImpl.class
+com\vl\lms\resource\LMSResource.class
