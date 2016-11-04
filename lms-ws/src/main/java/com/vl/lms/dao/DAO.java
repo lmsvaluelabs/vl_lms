@@ -1,5 +1,7 @@
 package com.vl.lms.dao;
 
-public interface DAO {
+import java.io.Serializable;
 
+public interface DAO {
+	<T extends Serializable> void save(T obj);		
 }
