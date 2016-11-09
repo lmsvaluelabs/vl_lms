@@ -1,0 +1,100 @@
+<div growl></div>
+<div class="container" ng-init="getAllUsers();">
+	<button type="button" class="btn btn-info pull-right"
+		ng-click="backToHomePage()">back</button>
+	<br />
+</div>
+<div class="clearfix"></div>
+<div class="container">
+	<h2>Employee Directory</h2>
+
+	<div class="form-group pull-right">
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="fname"
+				placeholder="search" ng-model="searchfields">
+		</div>
+	</div>
+	<button type="button" class="btn btn-primary pull-right"
+		ng-click="redirectToAddEmployeePage()">Add</button>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Emp Id</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Email</th>
+				<th>Mobile</th>
+				<th>Actions</th>
+
+			</tr>
+		</thead>
+		<tbody ng-repeat="user in userList | filter:searchfields">
+			<tr>
+				<td>{{$index+1}}</td>
+				<td>{{user.id}}</td>
+
+				<td ng-show="editMode">{{user.firstName}}</td>
+				<th ng-hide="editMode"><div class="col-sm-10">
+						<input type="text" class="form-control" id="fname"
+							placeholder="Enter firstname" ng-model="user.firstName" required>
+					</div></th>
+
+				<td ng-show="editMode">{{user.lastName}}</td>
+				<th ng-hide="editMode"><div class="col-sm-10">
+						<input type="text" class="form-control" id="lname"
+							placeholder="Enter lastname" ng-model="user.lastName" required>
+					</div></th>
+
+				<td ng-show="editMode">{{user.email}}</td>
+				<th ng-hide="editMode"><div class="col-sm-10">
+						<input type="email" class="form-control" id="email"
+							placeholder="Enter email" ng-model="user.email" required>
+					</div></th>
+				<th ng-show="editMode">{{user.mobileNumber}}</th>
+				<th ng-hide="editMode"><div class="col-sm-10">
+						<input type="text" class="form-control" id="mobile"
+							placeholder="Enter mobile" ng-model="user.mobileNumber">
+					</div></th>
+
+				<th ng-show="editMode"><button type="button"
+						class="btn btn-warning" ng-click="editMode = false">Edit</button>
+					<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="deleteDropdown(user.id)">Delete</button></th>
+
+				<th ng-hide="editMode"><button type="button"
+						class="btn btn-warning" ng-click="editMode = true;updateUser(user)">Update</button>
+					<button type="button" class="btn btn-danger"
+						ng-click="editMode = true">Cancel</button></th>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<p ng-hide="searchfields">
+		Total Records: <span>{{userList.length}}</span>
+	</p>
+</div>
+
+
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!-- <h4 class="modal-title">Modal Header</h4> -->
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="deleteUser()" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

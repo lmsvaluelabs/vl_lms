@@ -1,0 +1,52 @@
+ 
+ <div growl></div>
+ <div class="container">
+<button type="button" class="btn btn-info pull-right"
+	ng-click="backToEmployeeDirectory()">back</button>
+<br />
+  </div>
+ <form class="form-horizontal" name="registartionform" ng-submit="addEmployee()" novalidate>
+ <div class="form-group">
+    <label class="control-label col-sm-2" for="fname">FirstName:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="fname" placeholder="Enter firstname" ng-model="employee.firstName"  ng-minlength="3" ng-maxlength="15" required>
+    </div>
+	
+	<div class="help-block"  ng-messages="registartionform.fname.$error" ng-show="registartionform.fname.$touched">
+            <div ng-messages-include="partials/validationmessages.html"></div>
+    </div>
+	</div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="lname">LastName:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" name="lname" placeholder="Enter lastname" ng-model="employee.lastName" ng-minlength="3" ng-maxlength="15" required>
+    </div>
+		<div class="help-block"  ng-messages="registartionform.lname.$error" ng-show="registartionform.lname.$touched">
+            <div ng-messages-include="partials/validationmessages.html"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="employee.email" required>
+    </div>
+		<div class="help-block"  ng-messages="registartionform.email.$error" ng-show="registartionform.email.$touched">
+            <div ng-messages-include="partials/validationmessages.html"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="mobile">Mobile:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" name="mobile" placeholder="Enter mobile" ng-model="employee.mobileNumber" ng-minlength="10" ng-maxlength="10" maxlength="10" required>
+    </div>
+		<div class="help-block"  ng-messages="registartionform.mobile.$error" ng-show="registartionform.mobile.$touched">
+            <div ng-messages-include="partials/validationmessages.html"></div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary" ng-disabled="registartionform.$invalid">Save</button>
+    </div>
+  </div>
+</form>
