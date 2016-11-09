@@ -97,7 +97,7 @@ public class EmployeeResource {
 	@DELETE
 	public Response deleteAll() {
 		try {
-			return Response.ok(null, MediaType.APPLICATION_JSON).build();
+			return Response.ok().build();
 		} catch (Exception exception) {
 			return Response.serverError().entity(exception.getMessage()).build();
 		}
@@ -117,7 +117,7 @@ public class EmployeeResource {
 	@Path("/{empid}")
 	public Response getById(@PathParam("empid") Long empid) {
 		try {
-			return Response.ok(null, MediaType.APPLICATION_JSON).build();
+			return Response.ok().build();
 		} catch (Exception exception) {
 			return Response.serverError().entity(exception.getMessage()).build();
 		}
@@ -137,7 +137,7 @@ public class EmployeeResource {
 	@Path("/{empid}")
 	public Response deleteById(@PathParam("empid") Long empid) {
 		try {
-			return Response.ok(null, MediaType.APPLICATION_JSON).build();
+			return Response.ok().build();
 		} catch (Exception exception) {
 			return Response.serverError().entity(exception.getMessage()).build();
 		}
