@@ -131,7 +131,7 @@ public class EmployeeResource {
 	 * 
 	 * @param empid
 	 * 
-	 * @return Response object either with success or error message /
+	 * @return Response object either with success or error message
 	 */
 	@DELETE
 	@Path("/{empid}")
