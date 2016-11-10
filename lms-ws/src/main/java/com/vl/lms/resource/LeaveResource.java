@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
  * @author karimuddin.syed
  *
  */
-@Path("employee")
+@Path("leave")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class LeaveResource {
