@@ -16,4 +16,10 @@ public class DAOImpl implements DAO {
 		
 	}
 
+	@Override
+	public <T extends Serializable> void update(T obj) {
+		
+		
+	}
+
 }
