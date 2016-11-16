@@ -22,4 +22,10 @@ public class DAOImpl implements DAO {
 		
 	}
 
+	@Override
+	public <T extends Serializable> void delete(T obj) {
+		
+		
+	}
+
 }
